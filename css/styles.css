@@ -1,0 +1,26 @@
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	margin: 0;
+}
+
+h1,
+h2,
+ul {
+	margin: 0;
+}
+
+nav,
+.hero {
+	background-color: #1f2937;
+	color: white;
+}
+
+.projects,
+.action {
+	background-color: #ffffff;
+}
+
+.quote {
+	background-color: #e5e7eb;
+}
