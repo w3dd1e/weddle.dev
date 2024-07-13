@@ -8,6 +8,15 @@ h1,
 h2,
 ul {
 	margin: 0;
+	list-style-type: none;
+}
+
+nav,
+div,
+ul,
+footer {
+	display: flex;
+	justify-content: center;
 }
 
 nav,
