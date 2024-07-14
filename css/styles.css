@@ -21,14 +21,24 @@ footer {
 }
 
 .section,
+nav {
+	padding: 1rem 8rem;
+}
+
+.section,
 .textContainer {
 	flex-direction: column;
+}
+
+.sectionHeadline {
+	color: #1f2937;
+	font-size: 2.25rem;
+	text-align: center;
 }
 
 nav,
 .hero {
 	background-color: #1f2937;
-	color: white;
 }
 
 .projects,
@@ -38,4 +48,42 @@ nav,
 
 .quote {
 	background-color: #e5e7eb;
+}
+
+.logo,
+.headline {
+	color: #f9faf8;
+	font-size: 1.5rem;
+}
+
+.headline {
+	font-size: 3rem;
+}
+
+.subText,
+.navLinks a,
+.actionContainer,
+button {
+	color: #e5e7eb;
+	text-decoration: none;
+}
+
+.logo {
+	margin-right: auto;
+}
+
+button,
+.actionContainer {
+	background-color: #3882f6;
+}
+
+button {
+	padding: 0.25rem 1.5rem;
+	border-radius: 0.5rem;
+	border: none;
+}
+
+.actionContainer button {
+	border: solid 0.125rem;
+	margin: auto;
 }
