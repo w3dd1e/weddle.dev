@@ -115,4 +115,14 @@ button {
 
 .projectItem {
 	color: #484c52;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.projectItem img {
+	aspect-ratio: 1/1;
+	width: 100px;
+	object-fit: cover;
+	object-position: top;
 }
