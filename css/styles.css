@@ -70,8 +70,7 @@ footer {
 }
 
 .subText,
-.navLinks a,
-.actionContainer {
+.navLinks a {
 	color: #cbcbcb;
 	text-decoration: none;
 	font-size: 1.125rem;
@@ -112,4 +111,8 @@ button {
 	width: 400px;
 	object-fit: contain;
 	object-position: center;
+}
+
+.projectItem {
+	color: #484c52;
 }
