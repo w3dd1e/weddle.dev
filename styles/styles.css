@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+@font-face {
+	font-family: 'Real VHS';
+	src: url('/assets/RealVhsFontRegular-WyV0z.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'VCR OSD Mono';
+	src: url(/assets/VCR_OSD_MONO_1.001.ttf) format('truetype');
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+	--dark: #270245;
+	--light: #fd5d8d;
+	--white: #e9e1e1;
+
+	--dark-color: #191f1d;
+	--mid-dark: #555a57;
+	--light-color: #ece0c8;
+	--mid-light: #949993;
+	--shadow: #0005;
+	--linear-rainbow: linear-gradient(
+		to right,
+		#ede6bf,
+		#ecc947,
+		#cb5a31,
+		#6f5d79,
+		#4e779a
+	);
+	--circle-rainbow: radial-gradient(
+		circle at left top,
+		#ede6bf,
+		#ecc947,
+		#cb5a31,
+		#6f5d79,
+		#4e779a
+	);
+	--noise-texture: url(https://i.gyazo.com/a26366e538851a5c569ff648e99b7fd4.png);
+	--gif-texture: url(https://64.media.tumblr.com/da60c13b478dda09ab90c27e880983b8/tumblr_nd4pwdPKdc1tun3l0o1_1280.gifv);
+	--mulish: 'Mulish', sans-serif;
+	--playfair: 'Playfair Display', serif;
+	--dm: 'DM Serif Display', serif;
+	--main-transition: all 0.2s ease-in-out;
+
+	&::selection {
+		background: var(--light);
+		color: darken(var(--light), 20);
+		color: var(--dark);
+	}
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	position: relative;
+	background: #000;
+	overflow: hidden;
+	display: flex;
+
+	&:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		background: radial-gradient(
+			ellipse at center,
+			rgba(0, 0, 0, 0) 0%,
+			rgba(0, 0, 0, 0.4) 100%
+		);
+		z-index: 500;
+		mix-blend-mode: overlay;
+		pointer-events: none;
+	}
+}
+
+.title {
+	font-family: 'VCR OSD Mono';
+	font-size: 64px;
+	color: #fff;
+	text-align: center;
+	margin-top: 10%;
+	margin-bottom: 0;
+	text-transform: uppercase;
+}
+.subtitle {
+	font-family: 'VCR OSD Mono';
+	font-size: 36px;
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.nav {
+	display: flex;
+	justify-content: center;
+	height: 50%;
+	width: 100%;
+	align-items: flex-end;
+}
+
+.nav-list {
+	width: 90%;
+	list-style: none;
+	display: flex;
+	font-size: 20px;
+	justify-content: center;
+}
+
+.nav-list-item {
+	font-family: 'VCR OSD Mono';
+	text-transform: uppercase;
+	font-size: 64px;
+
+	color: #fff;
+	margin: 0 auto;
+}
+.noise {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	z-index: 400;
+	opacity: 0.8;
+	pointer-events: none;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: url('https://ice-creme.de/images/background-noise.png');
+		pointer-events: none;
+	}
+
+	&-moving {
+		opacity: 1;
+		z-index: 450;
+
+		&:before {
+			will-change: background-position;
+			animation: noise 1s infinite alternate;
+		}
+	}
+}
+
+.scanlines {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	pointer-events: none;
+	z-index: 300;
+	opacity: 0.6;
+	will-change: opacity;
+	animation: opacity 3s linear infinite;
+
+	&:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		pointer-events: none;
+		background: linear-gradient(
+			to bottom,
+			transparent 50%,
+			rgba(0, 0, 0, 0.5) 51%
+		);
+		background-size: 100% 4px;
+		will-change: background, background-size;
+		animation: scanlines 0.2s linear infinite;
+	}
+}
+
+.intro-wrap {
+	position: fixed;
+	top: 0;
+	left: 0;
+	font-family: 'Press Start 2P';
+	color: var(--white);
+	font-size: 2rem;
+	width: 100vw;
+	height: 100vh;
+	background: #294dee;
+
+	.noise {
+		&:before {
+			background-size: 200%;
+		}
+	}
+
+	.play {
+		position: absolute;
+		left: 2rem;
+		top: 2rem;
+		will-change: text-shadow;
+		animation: rgbText 2s steps(9) 0s infinite alternate;
+
+		.char {
+			will-change: opacity;
+			animation: type 1.2s infinite alternate;
+			animation-delay: calc(60ms * var(--char-index));
+		}
+	}
+
+	.time {
+		position: absolute;
+		right: 2rem;
+		top: 2rem;
+		will-change: text-shadow;
+		animation: rgbText 1s steps(9) 0s infinite alternate;
+	}
+
+	.recordSpeed {
+		position: absolute;
+		left: 2rem;
+		bottom: 2rem;
+		will-change: text-shadow;
+		animation: rgbText 1s steps(9) 0s infinite alternate;
+	}
+}
+
+/* Animations */
+@keyframes noise {
+	0%,
+	100% {
+		background-position: 0 0;
+	}
+	10% {
+		background-position: -5% -10%;
+	}
+	20% {
+		background-position: -15% 5%;
+	}
+	30% {
+		background-position: 7% -25%;
+	}
+	40% {
+		background-position: 20% 25%;
+	}
+	50% {
+		background-position: -25% 10%;
+	}
+	60% {
+		background-position: 15% 5%;
+	}
+	70% {
+		background-position: 0 15%;
+	}
+	80% {
+		background-position: 25% 35%;
+	}
+	90% {
+		background-position: -10% 10%;
+	}
+}
+
+@keyframes opacity {
+	0% {
+		opacity: 0.6;
+	}
+	20% {
+		opacity: 0.3;
+	}
+	35% {
+		opacity: 0.5;
+	}
+	50% {
+		opacity: 0.8;
+	}
+	60% {
+		opacity: 0.4;
+	}
+	80% {
+		opacity: 0.7;
+	}
+	100% {
+		opacity: 0.6;
+	}
+}
+
+@keyframes scanlines {
+	from {
+		background: linear-gradient(
+			to bottom,
+			transparent 50%,
+			rgba(0, 0, 0, 0.5) 51%
+		);
+		background-size: 100% 4px;
+	}
+	to {
+		background: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0.5) 50%,
+			transparent 50%
+		);
+		background-size: 100% 4px;
+	}
+}
+
+@keyframes rgbText {
+	0% {
+		text-shadow: -1px 1px 4px rgba(255, 255, 255, 0.6),
+			1px -1px 4px rgba(255, 255, 235, 0.7),
+			0px 0 1px rgba(251, 0, 231, 0.8), 0 0px 3px rgba(0, 233, 235, 0.8),
+			0px 0 3px rgba(0, 242, 14, 0.8), 0 0px 3px rgba(244, 45, 0, 0.8),
+			0px 0 3px rgba(59, 0, 226, 0.8);
+	}
+	25% {
+		text-shadow: -1px 1px 4px rgba(255, 255, 255, 0.6),
+			1px -1px 8px rgba(255, 255, 235, 0.7),
+			0px 0 1px rgba(251, 0, 231, 0.8), 0 0px 3px rgba(0, 233, 235, 0.8),
+			0px 0 3px rgba(0, 242, 14, 0.8), 0 0px 3px rgba(244, 45, 0, 0.8),
+			0px 0 3px rgba(59, 0, 226, 0.8);
+	}
+
+	55% {
+		text-shadow: -1px 1px 4px rgba(255, 255, 255, 0.6),
+			1px -1px 4px rgba(255, 255, 235, 0.7),
+			0px 0 3px rgba(251, 0, 231, 0.8), 0 0px 3px rgba(0, 233, 235, 0.8),
+			0px 0 3px rgba(0, 242, 14, 0.8), 0 0px 3px rgba(244, 45, 0, 0.8),
+			0px 0 3px rgba(59, 0, 226, 0.8);
+	}
+
+	100% {
+		text-shadow: -1px 1px 4px rgba(255, 255, 255, 0.6),
+			1px -1px 4px rgba(255, 255, 235, 0.7),
+			2px 0 1px rgba(251, 0, 231, 0.8), 0 -2px 1px rgba(0, 233, 235, 0.8),
+			-2px 0 1px rgba(0, 242, 14, 0.8), 0 2px 1px rgba(244, 45, 0, 0.8),
+			-2px 0 1px rgba(59, 0, 226, 0.8);
+	}
+}
+
+@keyframes type {
+	0%,
+	19% {
+		opacity: 0;
+	}
+	20%,
+	100% {
+		opacity: 1;
+	}
+}
+.scotch-container:before {
+	content: '';
+	display: flex;
+	position: absolute;
+	top: 0;
+	background-image: var(--noise-texture);
+	height: 580px;
+	width: 960px;
+	mix-blend-mode: overlay;
+	pointer-events: none;
+	z-index: 3;
+}
+.scratch-container:hover:after {
+	content: '';
+	display: flex;
+	position: absolute;
+	top: 0;
+	background-image: var(--gif-texture);
+	height: 100%;
+	width: 100%;
+	translate: 0px 0px;
+	background-repeat: no-repeat;
+	background-position-y: -20px;
+	background-size: cover;
+	mix-blend-mode: screen;
+	pointer-events: none;
+	opacity: 64%;
+	z-index: 3;
+}
