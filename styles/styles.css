@@ -100,17 +100,19 @@ body {
 }
 
 .about {
-	margin-top: 2rem;
+	margin: 2rem 10rem;
 	text-align: center;
-	font-size: 1rem;
+	font-size: 1.15rem;
+	line-height: 1.75rem;
 }
 
 .nav {
 	display: flex;
 	justify-content: center;
-	height: 50%;
 	width: 100%;
 	align-items: flex-end;
+	position: absolute;
+	bottom: 10rem;
 }
 
 .nav-list {
