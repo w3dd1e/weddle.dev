@@ -433,3 +433,9 @@ body {
 	opacity: 64%;
 	z-index: 3;
 }
+
+@media (max-width: 800px) {
+	.nav-list-item {
+		font-size: 2rem;
+	}
+}
