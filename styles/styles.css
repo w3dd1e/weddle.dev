@@ -124,9 +124,17 @@ body {
 	margin: 0 auto;
 }
 
+.nav_link {
+	color: #fff;
+	text-decoration: none;
+}
 .nav_link:hover {
 	padding-bottom: 5px;
 	border-bottom: 5px solid #fff;
+}
+
+.nav_link:active {
+	color: var(--light);
 }
 .noise {
 	position: fixed;
