@@ -139,6 +139,7 @@ body {
 	top: 0;
 	list-style: none;
 	display: flex;
+	flex-wrap: wrap;
 	font-size: 20px;
 	justify-content: center;
 	gap: 3rem;
