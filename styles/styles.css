@@ -106,6 +106,26 @@ body {
 	line-height: 1.75rem;
 }
 
+.contact-list {
+	font-size: 1.5rem;
+	display: flex;
+	flex-wrap: wrap;
+	list-style-type: none;
+	gap: 4rem;
+	justify-content: center;
+	margin: 5rem 10rem;
+}
+
+.contact-link {
+	color: #fff;
+	text-decoration: none;
+}
+
+.contact-link:hover {
+	color: var(--light);
+	border-bottom: 3px solid var(--light);
+}
+
 .nav {
 	display: flex;
 	justify-content: center;
