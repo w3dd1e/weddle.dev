@@ -123,6 +123,11 @@ body {
 	color: #fff;
 	margin: 0 auto;
 }
+
+.nav_link:hover {
+	padding-bottom: 5px;
+	border-bottom: 5px solid #fff;
+}
 .noise {
 	position: fixed;
 	top: 0;
@@ -205,6 +210,7 @@ body {
 	}
 
 	.play {
+		font-size: 1.25rem;
 		position: absolute;
 		left: 2rem;
 		top: 2rem;
@@ -219,6 +225,7 @@ body {
 	}
 
 	.time {
+		font-size: 1.25rem;
 		position: absolute;
 		right: 2rem;
 		top: 2rem;
@@ -227,6 +234,7 @@ body {
 	}
 
 	.recordSpeed {
+		font-size: 1.25rem;
 		position: absolute;
 		left: 2rem;
 		bottom: 2rem;
