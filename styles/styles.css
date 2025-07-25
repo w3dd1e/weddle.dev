@@ -435,7 +435,18 @@ body {
 }
 
 @media (max-width: 800px) {
+	.title {
+		margin: 5rem 1rem 0;
+	}
+	.nav-list {
+		gap: 1rem;
+		margin: 1rem;
+	}
 	.nav-list-item {
 		font-size: 2rem;
+	}
+
+	.contact-list {
+		gap: 1rem;
 	}
 }
