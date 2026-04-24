@@ -257,7 +257,7 @@ body {
 }
 
 .intro-wrap {
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	font-family: 'Press Start 2P';
@@ -275,7 +275,7 @@ body {
 
 	.play {
 		font-size: 1.25rem;
-		position: absolute;
+		position: fixed;
 		left: 2rem;
 		top: 2rem;
 		will-change: text-shadow;
@@ -290,18 +290,18 @@ body {
 
 	.time {
 		font-size: 1.25rem;
-		position: absolute;
+		position: fixed;
 		right: 2rem;
-		top: 2rem;
+		bottom: 2rem;
 		will-change: text-shadow;
 		animation: rgbText 1s steps(9) 0s infinite alternate;
 	}
 
 	.recordSpeed {
 		font-size: 1.25rem;
-		position: absolute;
+		position: fixed;
 		left: 2rem;
-		bottom: 2rem;
+		bottom: 2rem;	
 		will-change: text-shadow;
 		animation: rgbText 1s steps(9) 0s infinite alternate;
 	}
@@ -457,26 +457,77 @@ body {
 }
 
 @media (max-width: 800px) {
+	.intro-wrap {
+		overflow-y: auto;
+	}
+
 	.title {
-		margin: 5rem 1rem 0;
+		font-size: 2.5rem;
+		margin: 4rem 1rem 0;
+	}
+
+	.subtitle {
+		font-size: 1.25rem;
+		margin: 0.25rem 1rem;
 	}
 
 	.about {
 		font-size: 1rem;
 		margin: 2rem 1rem;
-		overflow: scroll;
-		overflow-y: hidden;
-		height: 40vh;
+		height: auto;
+		overflow: visible;
 	}
+
+	.nav {
+		position: static;
+		bottom: auto;
+		margin: 3rem auto;
+	}
+
 	.nav-list {
 		gap: 1rem;
 		margin: 1rem;
 	}
+
 	.nav-list-item {
 		font-size: 2rem;
 	}
 
 	.contact-list {
+		font-size: 1rem;
 		gap: 1rem;
+		margin: 2rem 1rem;
+	}
+
+	.projects_list {
+		margin: 1rem;
+	}
+
+	.project_list-item,
+	.project_img {
+	width: 15rem;
+	height: 15rem;
+	object-fit: cover;
+	object-position: 0 0;
+}
+}
+
+@media (max-width: 480px) {
+	.title {
+		font-size: 2rem;
+	}
+
+	.subtitle {
+		font-size: 1rem;
+	}
+
+	.nav-list-item {
+		font-size: 1.5rem;
+	}
+
+	.intro-wrap .play,
+	.intro-wrap .time,
+	.intro-wrap .recordSpeed {
+		font-size: 0.85rem;
 	}
 }
