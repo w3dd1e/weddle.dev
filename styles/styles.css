@@ -192,6 +192,10 @@ body {
 	object-fit: cover;
 	object-position: 0 0;
 }
+.project_detail {
+	padding-top: .75rem;
+	font-size: 12px;
+}
 .noise {
 	position: fixed;
 	top: 0;
