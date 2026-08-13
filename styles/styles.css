@@ -138,6 +138,15 @@ body {
 	bottom: 10rem;
 }
 
+.projects_nav {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	align-items: flex-end;
+	position: absolute;
+	bottom: 2rem;
+}
+
 .nav-list {
 	top: 0;
 	list-style: none;
@@ -179,6 +188,8 @@ body {
 	justify-content: center;
 	margin: 3rem 3rem;
 	gap: 3rem;
+	overflow: scroll;
+	height: 30rem;
 }
 
 .project_list-item {
@@ -193,7 +204,7 @@ body {
 	object-position: 0 0;
 }
 .project_detail {
-	padding-top: .75rem;
+	padding-top: 0.75rem;
 	font-size: 12px;
 }
 .noise {
@@ -305,7 +316,7 @@ body {
 		font-size: 1.25rem;
 		position: fixed;
 		left: 2rem;
-		bottom: 2rem;	
+		bottom: 2rem;
 		will-change: text-shadow;
 		animation: rgbText 1s steps(9) 0s infinite alternate;
 	}
@@ -391,33 +402,45 @@ body {
 
 @keyframes rgbText {
 	0% {
-		text-shadow: -1px 1px 4px rgba(255, 255, 255, 0.6),
+		text-shadow:
+			-1px 1px 4px rgba(255, 255, 255, 0.6),
 			1px -1px 4px rgba(255, 255, 235, 0.7),
-			0px 0 1px rgba(251, 0, 231, 0.8), 0 0px 3px rgba(0, 233, 235, 0.8),
-			0px 0 3px rgba(0, 242, 14, 0.8), 0 0px 3px rgba(244, 45, 0, 0.8),
+			0px 0 1px rgba(251, 0, 231, 0.8),
+			0 0px 3px rgba(0, 233, 235, 0.8),
+			0px 0 3px rgba(0, 242, 14, 0.8),
+			0 0px 3px rgba(244, 45, 0, 0.8),
 			0px 0 3px rgba(59, 0, 226, 0.8);
 	}
 	25% {
-		text-shadow: -1px 1px 4px rgba(255, 255, 255, 0.6),
+		text-shadow:
+			-1px 1px 4px rgba(255, 255, 255, 0.6),
 			1px -1px 8px rgba(255, 255, 235, 0.7),
-			0px 0 1px rgba(251, 0, 231, 0.8), 0 0px 3px rgba(0, 233, 235, 0.8),
-			0px 0 3px rgba(0, 242, 14, 0.8), 0 0px 3px rgba(244, 45, 0, 0.8),
+			0px 0 1px rgba(251, 0, 231, 0.8),
+			0 0px 3px rgba(0, 233, 235, 0.8),
+			0px 0 3px rgba(0, 242, 14, 0.8),
+			0 0px 3px rgba(244, 45, 0, 0.8),
 			0px 0 3px rgba(59, 0, 226, 0.8);
 	}
 
 	55% {
-		text-shadow: -1px 1px 4px rgba(255, 255, 255, 0.6),
+		text-shadow:
+			-1px 1px 4px rgba(255, 255, 255, 0.6),
 			1px -1px 4px rgba(255, 255, 235, 0.7),
-			0px 0 3px rgba(251, 0, 231, 0.8), 0 0px 3px rgba(0, 233, 235, 0.8),
-			0px 0 3px rgba(0, 242, 14, 0.8), 0 0px 3px rgba(244, 45, 0, 0.8),
+			0px 0 3px rgba(251, 0, 231, 0.8),
+			0 0px 3px rgba(0, 233, 235, 0.8),
+			0px 0 3px rgba(0, 242, 14, 0.8),
+			0 0px 3px rgba(244, 45, 0, 0.8),
 			0px 0 3px rgba(59, 0, 226, 0.8);
 	}
 
 	100% {
-		text-shadow: -1px 1px 4px rgba(255, 255, 255, 0.6),
+		text-shadow:
+			-1px 1px 4px rgba(255, 255, 255, 0.6),
 			1px -1px 4px rgba(255, 255, 235, 0.7),
-			2px 0 1px rgba(251, 0, 231, 0.8), 0 -2px 1px rgba(0, 233, 235, 0.8),
-			-2px 0 1px rgba(0, 242, 14, 0.8), 0 2px 1px rgba(244, 45, 0, 0.8),
+			2px 0 1px rgba(251, 0, 231, 0.8),
+			0 -2px 1px rgba(0, 233, 235, 0.8),
+			-2px 0 1px rgba(0, 242, 14, 0.8),
+			0 2px 1px rgba(244, 45, 0, 0.8),
 			-2px 0 1px rgba(59, 0, 226, 0.8);
 	}
 }
@@ -509,11 +532,11 @@ body {
 
 	.project_list-item,
 	.project_img {
-	width: 15rem;
-	height: 15rem;
-	object-fit: cover;
-	object-position: 0 0;
-}
+		width: 15rem;
+		height: 15rem;
+		object-fit: cover;
+		object-position: 0 0;
+	}
 }
 
 @media (max-width: 480px) {
