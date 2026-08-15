@@ -482,7 +482,10 @@ body {
 	opacity: 64%;
 	z-index: 3;
 }
-
+.projects_nav > .scratch-container:before,
+.projects_nav > .scratch-container:hover:after {
+	bottom: -2rem;
+}
 @media (max-width: 800px) {
 	.title {
 		font-size: 2.5rem;
