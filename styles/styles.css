@@ -487,6 +487,14 @@ body {
 	bottom: -2rem;
 }
 @media (max-width: 800px) {
+	.scratch-container:before,
+	.scratch-container:hover:after {
+		bottom: 0rem;
+	}
+	.projects_nav > .scratch-container:before,
+	.projects_nav > .scratch-container:hover:after {
+		bottom: 0rem;
+	}
 	.title {
 		font-size: 2.5rem;
 		margin: 4rem 1rem 0;
